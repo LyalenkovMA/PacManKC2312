@@ -99,15 +99,30 @@ namespace PacManKC2312
 
             Console.Clear();
             _level.Draw();
-
-            for (int i = 0; i < _player.CountLive; i++)
-                lineSymbolPlayer += _player.Symbol;
-
-            info += $"{lineSymbolPlayer}        очки {_countPoint}";
-            Console.WriteLine(info);
+            PrintInformLine();
 
             foreach (GameObject gameObject in _gameObjects)
                 gameObject.Draw();
+        }
+
+        private void PrintInformLine()
+        {
+            int width = _level.GetMap().GetLength(0);
+            string livesPlayer = "";
+            string infoBals = $"Балы {_countPoint}";
+            string text = "";
+            char emptySpace = ' ';
+
+            for (int i = 0; i < _player.CountLive; i++)
+                livesPlayer += _player.Symbol;
+
+            text += '|' + livesPlayer;
+
+            for (int i = 0; i < (width - (livesPlayer.Length + infoBals.Length))-2; i++)
+                text += emptySpace;
+            text += infoBals + '|';
+
+            Console.WriteLine(text);
         }
     }
 }

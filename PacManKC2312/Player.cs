@@ -78,6 +78,7 @@ namespace PacManKC2312
         {
             IsBonus = true;
         }
+
         public void DiactivateBonus()
         {
             IsBonus = false;
