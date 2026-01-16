@@ -34,9 +34,9 @@ namespace PacManKC2312
             _gameObjects.Add(new Bonus(_level, _player));
 
             _countPoint = 0;
-            _delay = 500;
+            _delay = 200;
             _timerBonus = 0;
-            _timyBonus = 20;
+            _timyBonus = 40;
         }
 
         public void Start()
